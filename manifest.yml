@@ -1,0 +1,8 @@
+---
+applications:
+- name: noteapp-vivek
+  memory: 128M
+  buildpack: https://github.com/pivotal-cf-experimental/cf-buildpack-php.git
+  env:
+    CF_STAGING_TIMEOUT: 15
+    CF_STARTUP_TIMEOUT: 15

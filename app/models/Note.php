@@ -8,5 +8,7 @@ class Note extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'notes';
+	
+	public $timestamps = false;
 
 }

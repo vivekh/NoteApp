@@ -1,5 +1,8 @@
 <?php
 
+$services = json_decode(getenv('VCAP_SERVICES'), true);
+$sqlCreds = $services['cleardb'][0]['credentials'];
+
 return array(
 
 	/*
@@ -54,10 +57,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'noteapp',
-			'username'  => 'root',
-			'password'  => 'bullshit',
+			'host'      => $sqlCreds['hostname'],
+			'database'  => $sqlCreds['name'],
+			'username'  => $sqlCreds['username'],
+			'password'  => $sqlCreds['password'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

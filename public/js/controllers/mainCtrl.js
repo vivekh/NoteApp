@@ -16,6 +16,8 @@ angular.module('mainCtrl', [])
 		$scope.showForm = function() {
 			$scope.form = true;
 			$scope.addBtn = false;
+			$scope.noteData.title = null;
+			$scope.noteData.note = null;
 		};
 
 		$scope.hideForm = function() {
